@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Addition Element</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="">
+        <script src="./addition-element.js"></script>
+    </head>
+    <body>
+        <div>
+            <h3 style="text-align: center; text-transform: uppercase;">Calculating the sum of two values using angular elements</h3>
+            <br>
+            <br>
+            <input type="number" placeholder="Enter value one" id="value1" style="display: block;margin : 0 auto;">
+            <br>
+            <br>
+            <input type="number" placeholder="Enter value two"id="value2" style="display: block;margin : 0 auto;">
+            <br>
+            <br>
+            <br>
+            <button type="button" onclick="getInputValues();" style="display: block;margin : 0 auto;">Calculate Sum</button>
+            <app-addition id="addition"></app-addition>
+          </div>
+        <script>
+          function getInputValues()
+            {
+                document.getElementById('addition').setAttribute("ValueOne",getTextBoxValue('value1'))
+                document.getElementById('addition').setAttribute("ValueTwo",getTextBoxValue('value2'))
+                alert('The sum of value one and value two is: '+((getTextBoxValue('value1')*1)+(getTextBoxValue('value2')*1)));
+            }
+                function getTextBoxValue(textBoxId)
+            {
+                return document.getElementById(textBoxId).value;
+            }
+         </script>
+    </body>
+</html>
